@@ -9,3 +9,8 @@ it('renders a button', () => {
     const square = shallow(<Square/>);
     expect(square.find('button.square').length).toEqual(1);
 });
+
+it('displays number', () => {
+   const square = shallow(<Square value={4}/>);
+   expect(square.text()).toEqual('4');
+});
