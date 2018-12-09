@@ -21,5 +21,10 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "@types/jest": "^23.3.10",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0"
+  }
 }
