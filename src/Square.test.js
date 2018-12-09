@@ -10,9 +10,17 @@ it('renders a button', () => {
     expect(square.find('button.square').length).toEqual(1);
 });
 
-it('originally displays nothing', () => {
-   const square = shallow(<Square/>);
-   expect(square.text()).toEqual('');
+it('shows value', () => {
+   const square = shallow(<Square value={4}/>);
+   expect(square.text()).toEqual('4');
+});
+
+it('is empty if given no value or null value', () => {
+    const squareUndefined = shallow(<Square/>);
+    expect(squareUndefined.text()).toEqual('');
+
+    const squareNull = shallow(<Square valure={null}/>);
+    expect(squareNull.text()).toEqual('');
 });
 
 it('marks with X on click', () => {
