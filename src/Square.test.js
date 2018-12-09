@@ -10,14 +10,13 @@ it('renders a button', () => {
     expect(square.find('button.square').length).toEqual(1);
 });
 
-it('displays number', () => {
-   const square = shallow(<Square value={4}/>);
-   expect(square.text()).toEqual('4');
+it('originally displays nothing', () => {
+   const square = shallow(<Square/>);
+   expect(square.text()).toEqual('');
 });
 
-it('alerts on click', () => {
-    window.alert = jest.fn();
-   const square = shallow(<Square value={3}/>);
+it('marks with X on click', () => {
+   const square = shallow(<Square/>);
    square.simulate('click');
-   expect(window.alert).toHaveBeenCalledWith('clicked');
+   expect(square.text()).toEqual('X');
 });

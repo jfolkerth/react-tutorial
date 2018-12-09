@@ -19,17 +19,3 @@ it('shows next player status', ()=> {
    const board = shallow(<Board/>);
    expect(board.find('div.status').text()).toEqual('Next player: X');
 });
-
-it('numbers the squares', () => {
-   const board = mount(<Board/>);
-   const squares = board.find(Square);
-   expect(squares.at(0).text()).toEqual('0');
-   expect(squares.at(1).text()).toEqual('1');
-   expect(squares.at(2).text()).toEqual('2');
-   expect(squares.at(3).text()).toEqual('3');
-   expect(squares.at(4).text()).toEqual('4');
-   expect(squares.at(5).text()).toEqual('5');
-   expect(squares.at(6).text()).toEqual('6');
-   expect(squares.at(7).text()).toEqual('7');
-   expect(squares.at(8).text()).toEqual('8');
-});
