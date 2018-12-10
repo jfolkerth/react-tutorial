@@ -2,7 +2,7 @@ import React from 'react';
 import {configure, shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import Game from './Game';
-import Board from './Board';
+import {Board} from './Board';
 
 configure({ adapter: new Adapter() });
 

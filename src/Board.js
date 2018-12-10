@@ -1,5 +1,12 @@
 import React from 'react';
-import Square from "./Square";
+
+function Square(props) {
+    return (
+        <button className="square" onClick={props.onClick}>
+            {props.value}
+        </button>
+    );
+}
 
 class Board extends React.Component {
     constructor(props) {
@@ -17,12 +24,8 @@ class Board extends React.Component {
 
     renderSquare(index) {
         const value = this.state.squares[index];
-        return (
-            <Square
-                value={value}
-                onClick={() => this.handleClick(index)}
-            />
-        );
+        const onClick = () => this.handleClick(index);
+        return <Square value={value} onClick={onClick}/>;
     }
 
     render() {
@@ -51,4 +54,4 @@ class Board extends React.Component {
     }
 }
 
-export default Board;
+export {Board, Square}

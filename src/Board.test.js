@@ -1,8 +1,7 @@
 import React from 'react';
 import {configure, mount, shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import Board from './Board';
-import Square from './Square';
+import { Board, Square } from './Board';
 
 configure({ adapter: new Adapter() });
 
@@ -18,6 +17,21 @@ it('renders three rows of three squares', () => {
 it('shows next player status', ()=> {
    const board = shallow(<Board/>);
    expect(board.find('div.status').text()).toEqual('Next player: X');
+});
+
+it('starts blank', () => {
+    const board = mount(<Board/>);
+    const squares = board.find(Square);
+
+    expect(squares.at(0).text()).toEqual('');
+    expect(squares.at(1).text()).toEqual('');
+    expect(squares.at(2).text()).toEqual('');
+    expect(squares.at(3).text()).toEqual('');
+    expect(squares.at(4).text()).toEqual('');
+    expect(squares.at(5).text()).toEqual('');
+    expect(squares.at(6).text()).toEqual('');
+    expect(squares.at(7).text()).toEqual('');
+    expect(squares.at(8).text()).toEqual('');
 });
 
 it('clicking multiple squares updates the board', () => {
